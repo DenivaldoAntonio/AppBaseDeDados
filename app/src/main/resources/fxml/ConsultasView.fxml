@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.bd.sgv.view.Consultas"
+            prefHeight="600.0" prefWidth="800.0">
+    
+    <top>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" 
+                   text="📊 Consultas SQL - Stored Procedures" />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            
+            <!-- Tab 1: Contar Filmes por Mês/Ano -->
+            <Tab text="Filmes Mês/Ano">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="COUNT_MOVIES_MONTH_YEAR" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Mês:" />
+                        <Spinner fx:id="spinnerMes" prefWidth="80.0" />
+                        <Label text="Ano:" />
+                        <Spinner fx:id="spinnerAnoMes" prefWidth="100.0" />
+                        <Button fx:id="btnConsultarMes" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <Label fx:id="lblResultadoMes" style="-fx-font-size: 14px; -fx-text-fill: blue;" 
+                           text="Resultado aparecerá aqui..." />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 2: Contar Filmes por Diretor -->
+            <Tab text="Filmes por Diretor">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="COUNT_MOVIES_DIRECTOR" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Nome do Diretor:" />
+                        <TextField fx:id="txtDiretor" promptText="Ex: Steven Spielberg" 
+                                  prefWidth="250.0" />
+                        <Button fx:id="btnConsultarDiretor" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <Label fx:id="lblResultadoDiretor" style="-fx-font-size: 14px; -fx-text-fill: blue;" 
+                           text="Resultado aparecerá aqui..." />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 3: Contar Atores entre Dois Anos -->
+            <Tab text="Atores 2 Anos">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="COUNT_ACTORS_IN_2_YEARS" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Ano 1:" />
+                        <Spinner fx:id="spinnerAno1" prefWidth="100.0" />
+                        <Label text="Ano 2:" />
+                        <Spinner fx:id="spinnerAno2" prefWidth="100.0" />
+                        <Button fx:id="btnConsultarAtores" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <Label fx:id="lblResultadoAtores" style="-fx-font-size: 14px; -fx-text-fill: blue;" 
+                           text="Resultado aparecerá aqui..." />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 4: Filmes de um Ator em um Ano -->
+            <Tab text="Filmes Ator/Ano">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="GET_MOVIES_ACTOR_YEAR" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Ano:" />
+                        <Spinner fx:id="spinnerAnoAtor" prefWidth="100.0" />
+                        <Label text="Nome do Ator:" />
+                        <TextField fx:id="txtAtor" promptText="Ex: Tom Hanks" prefWidth="200.0" />
+                        <Button fx:id="btnConsultarFilmesAtor" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <TextArea fx:id="txtResultadoFilmesAtor" editable="false" prefHeight="300.0" 
+                             promptText="Resultados aparecerão aqui..." />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 5: Top Atores por Diretor -->
+            <Tab text="Top Atores Diretor">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="GET_ACTORS_BY_DIRECTOR" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Top:" />
+                        <Spinner fx:id="spinnerNumAtores" prefWidth="80.0" />
+                        <Label text="Diretor:" />
+                        <TextField fx:id="txtDiretorAtores" promptText="Ex: Christopher Nolan" 
+                                  prefWidth="200.0" />
+                        <Button fx:id="btnConsultarAtoresDiretor" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <TextArea fx:id="txtResultadoAtoresDiretor" editable="false" prefHeight="300.0" 
+                             promptText="Resultados aparecerão aqui..." />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 6: Mês com Mais Filmes -->
+            <Tab text="Mês com Mais Filmes">
+                <VBox spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    
+                    <Label style="-fx-font-weight: bold;" text="TOP_MONTH_MOVIE_COUNT" />
+                    <Separator />
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="Ano:" />
+                        <Spinner fx:id="spinnerAnoMesMais" prefWidth="100.0" />
+                        <Button fx:id="btnConsultarMesMais" text="🔍 Consultar" />
+                    </HBox>
+                    
+                    <Label fx:id="lblResultadoMesMais" style="-fx-font-size: 14px; -fx-text-fill: blue;" 
+                           text="Resultado aparecerá aqui..." />
+                </VBox>
+            </Tab>
+            
+        </TabPane>
+    </center>
+</BorderPane>

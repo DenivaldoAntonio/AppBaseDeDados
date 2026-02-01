@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bd.sgv.view.Views"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <top>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;"
+                   text="Views SQL" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+
+            <!-- Tab 1: Top 5 Diretores com Mais Filmes -->
+            <Tab text="Top 5 Diretores">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_TOP_5_DIRETORES_MAIS_FILMES" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarTop5Diretores" text=" Carregar Dados" />
+                    </HBox>
+
+                    <TableView fx:id="tableTop5Diretores" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 2: Top 10 Atores com Mais Filmes -->
+            <Tab text="Top 10 Atores">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_TOP_10_ATORES_FILMES" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarTop10Atores" text=" Carregar Dados" />
+                    </HBox>
+
+                    <TableView fx:id="tableTop10Atores" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 3: Países com Menos de 5 Filmes -->
+            <Tab text="Países (menos de 5 Filmes)">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_PAISES_MENOS_5_FILMES" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarPaisesMenos5" text=" Carregar Dados" />
+                    </HBox>
+
+                    <TableView fx:id="tablePaisesMenos5" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 4: Continentes com Mais de 10 Filmes -->
+            <Tab text="Continentes (> 10 Filmes)">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_CONTINENTES_MAIS_10_FILMES" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarContinentesMais10" text=" Carregar Dados" />
+                    </HBox>
+
+                    <TableView fx:id="tableContinentesMais10" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

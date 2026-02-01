@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.bd.sgv.view.Listagens"
+            prefHeight="700.0" prefWidth="1000.0">
+    
+    <top>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" 
+                   text="Listagens (Fase 2)" />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            
+            <!-- Tab 1: Filmes Action -->
+            <Tab text="Filmes Action">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_FILMES_ACTION" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarFilmesAction" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableFilmesAction" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 2: Diretores Portugal -->
+            <Tab text="Diretores Portugal">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_DIRETORES_PORTUGAL" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarDiretoresPortugal" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableDiretoresPortugal" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+            
+            <!-- Tab 3: Atores Masculinos Ásia -->
+            <Tab text="Atores M Ásia">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_
+ATORES_MASCULINOS_ASIA" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarAtoresMasculinosAsia" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableAtoresMasculinosAsia" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 4: Filmes Verão -->
+            <Tab text="Filmes Verão">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_FILMES_VERAO" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarFilmesVerao" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableFilmesVerao" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 5: Action Europa Dezembro -->
+            <Tab text="Action Europa Dez">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_ACTION_EUROPA_DEZEMBRO" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarActionEuropaDesembro" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableActionEuropaDesembro" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 6: Filmes 18+ -->
+            <Tab text="Filmes 18+">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_FILMES_18_MAIS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarFilmes18Mais" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableFilmes18Mais" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 7: Continentes Filmes -10 -->
+            <Tab text="Continentes -10">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_CONTINENTES_FILMES_MENOS_10" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarContinentesFilmesMenos10" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableContinentesFilmesMenos10" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 8: Países Europa 18+ -->
+            <Tab text="Europa 18+">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_PAISES_EUROPA_18_MAIS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarPaisesEuropa18Mais" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tablePaisesEuropa18Mais" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+            <!-- Tab 9: Top 10 Diretores Rating -->
+            <Tab text="Top 10 Diretores">
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: bold;" text="VIEW: VW_TOP_10_DIRETORES_RATING" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCarregarTop10DiretoresRating" text=" Carregar Dados" />
+                    </HBox>
+                    <TableView fx:id="tableTop10DiretoresRating" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>
